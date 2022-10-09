@@ -13,7 +13,7 @@ pyinstaller --onefile client.py
 
 1. Rename file `hosts_exp.txt` to `hosts.txt` and enter the host's IP line by line.
 2. Run the `server.exe` file on the machine to be monitored.
-3. Run the `client.exe` file to get the system info.
+3. Run the `client.exe` file to get the system info (every 5 minutes).
 4. The raw data will be stored in the `data_json` folder, and the short data will be stored in the `data_csv` folder.
 
 ## Requirements
