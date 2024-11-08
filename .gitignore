@@ -2,13 +2,19 @@
 # Byte-compiled
 __pycache__/
 
+# Distribution / packaging
+build/
+dist/
+
+# PyInstaller
+*.manifest
+*.spec
+
 # poetry
 poetry.lock
 
 # Environments
 .venv/
-
-# Configurations
 hosts.txt
 
 # IntelliJ

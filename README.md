@@ -15,10 +15,3 @@ pyinstaller --onefile client.py
 2. Run the `server.exe` file on the machine to be monitored.
 3. Run the `client.exe` file to get the system info (every 5 minutes).
 4. The raw data will be stored in the `data_json` folder, and the short data will be stored in the `data_csv` folder.
-
-## Requirements
-
-- Python >= 3.6
-- psutil == 5.9.2
-- pyinstaller == 4.10
-- schedule == 1.1.0
