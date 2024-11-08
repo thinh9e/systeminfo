@@ -45,7 +45,7 @@ class SystemConn:
     def resp_json(self) -> dict:
         data = dict()
         if self.__resp is not None:
-            data_str = self.__resp.read().decode(ENCODING).replace("\'", "\"")
+            data_str = self.__resp.read().decode(ENCODING).replace("'", '"')
             data = json.loads(data_str)
         return data
 
@@ -70,7 +70,7 @@ class FileHandler:
         return filepath.exists()
 
     def check_active_date(self) -> None:
-        """"Check and update active date"""
+        """Check and update active date"""
         current_date = datetime.now().strftime(self.DIR_TIME_FORMAT)
         if self.__active_date != current_date:
             self.__active_date = current_date
