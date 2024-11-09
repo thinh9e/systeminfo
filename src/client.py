@@ -115,7 +115,7 @@ class FileHandler:
 
 def load_hosts() -> list:
     try:
-        with open("../hosts.txt", "r", encoding=ENCODING) as hosts_file:
+        with open("hosts.txt", "r", encoding=ENCODING) as hosts_file:
             return hosts_file.read().splitlines()
     except FileNotFoundError as exp:
         log_console(f"FileNotFoundError error: {exp}")
