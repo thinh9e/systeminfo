@@ -4,9 +4,21 @@ Send system information in an HTTP request
 
 ## Build
 
-```shell
+```batch
 pyinstaller --onefile server.py
 pyinstaller --onefile client.py
+```
+
+or
+
+```batch
+.\scripts\build.bat
+```
+
+### Clean
+
+```batch
+.\scripts\build.bat clean
 ```
 
 ## Run
