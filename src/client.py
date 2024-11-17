@@ -130,6 +130,9 @@ def get_data(host: str) -> dict:
 
 
 def save_data(handler: FileHandler) -> None:
+    if not is_scheduled():
+        return
+
     hosts = load_hosts()
     time_current = datetime.now().strftime(LOGGING_TIME_FORMAT)
     handler.csv_writer()
@@ -149,9 +152,14 @@ def save_data(handler: FileHandler) -> None:
     handler.csv_close()
 
 
+def is_scheduled() -> bool:
+    current_minute = datetime.now().minute
+    return current_minute % 5 == 0
+
+
 if __name__ == "__main__":
     file_handler = FileHandler()
-    schedule.every(5).minutes.do(save_data, file_handler)
+    schedule.every().minute.do(save_data, file_handler)
 
     try:
         log_console("Start client")
